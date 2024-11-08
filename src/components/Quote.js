@@ -7,12 +7,11 @@ const Quote = ({ quoteObj, incrementIndex, decrementIndex, index }) => {
   const speaker = quoteObj.speaker;
   return (
     <div className="w-full h-screen flex-col gap-8 content-center justify-items-center">
-      <img />
       <div className="p-5 w-full flex-col justify-items-center animate-feather gap-5">
         <p className="w-1/2 lg:text-5xl md:text-4xl text-2xl mb-5 text-center">
           {quote}
         </p>
-        <p className="lg:text-6xl md:text-5xl text-3xl text-center flex items-center">
+        <p className="lg:text-6xl md:text-5xl text-3xl flex items-center justify-center">
           {speaker}
           <img src={feather} className="size-16 pb-5 ml-2" alt="feather" />
         </p>
