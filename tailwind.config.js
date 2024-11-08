@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        phone: "300px",
+      },
       animation: {
         feather: "float 3s ease-in-out infinite",
       },

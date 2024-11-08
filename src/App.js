@@ -7,7 +7,7 @@ import Quotes from "./components/Quotes";
 import sound from "./assets/Harry-Potter-Theme.mp3";
 
 function App() {
-  const audio = new Audio(sound);
+  const [audio, setAudio] = useState(new Audio(sound));
   const [isPlaying, setIsPlaying] = useState(false);
   const [welcomePage, setWelcomePage] = useState(true);
   const welcomePageHandler = () => setWelcomePage(false);
@@ -26,9 +26,7 @@ function App() {
   const stopMusic = () => {
     if (isPlaying) {
       audio.pause();
-      if (!audio.paused) {
-        audio.currentTime = 0;
-      }
+      setIsPlaying(false);
     }
   };
   useEffect(() => {
@@ -68,7 +66,7 @@ function App() {
         )}
         {!welcomePage && <Quotes />}
       </div>
-      <div className="fixed text-6xl text-white right-5 bottom-5">
+      <div className="fixed lg:text-6xl md:text-4xl text-2xl text-white right-5 bottom-5">
         {!isPlaying && <MdMusicNote onClick={startAudio} />}
         {isPlaying && <MdMusicOff onClick={stopMusic} />}
       </div>

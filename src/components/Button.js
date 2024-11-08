@@ -1,8 +1,11 @@
 import React from "react";
 
-const Button = ({ children }) => {
+const Button = ({ children, name, decrementIndex, incrementIndex }) => {
+  let functionToUse = () => {};
+  if (name === "prev") functionToUse = decrementIndex;
+  else if (name === "next") functionToUse = incrementIndex;
   return (
-    <button>
+    <button onClick={functionToUse}>
       {children}
       <div className="star-1">
         <svg
