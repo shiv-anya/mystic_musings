@@ -66,10 +66,12 @@ function App() {
         )}
         {!welcomePage && <Quotes />}
       </div>
-      <div className="fixed lg:text-6xl md:text-4xl text-2xl text-white right-5 bottom-5">
-        {!isPlaying && <MdMusicNote onClick={startAudio} />}
-        {isPlaying && <MdMusicOff onClick={stopMusic} />}
-      </div>
+      {!welcomePage && (
+        <div className="fixed lg:text-6xl md:text-4xl text-2xl text-white right-5 bottom-5">
+          {!isPlaying && <MdMusicNote onClick={startAudio} />}
+          {isPlaying && <MdMusicOff onClick={stopMusic} />}
+        </div>
+      )}
     </div>
   );
 }

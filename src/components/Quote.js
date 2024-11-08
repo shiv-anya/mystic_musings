@@ -7,7 +7,7 @@ const Quote = ({ quoteObj, incrementIndex, decrementIndex, index }) => {
   const speaker = quoteObj.speaker;
   return (
     <div className="w-full h-screen flex-col gap-8 content-center justify-items-center">
-      <div className="p-5 w-full flex-col justify-items-center animate-feather gap-5">
+      <div className="p-5 w-full flex-col justify-items-center animate-feather lg:gap-5 md:gap-2 sm:gap-1">
         <p className="w-1/2 lg:text-5xl md:text-4xl text-2xl mb-5 text-center">
           {quote}
         </p>
